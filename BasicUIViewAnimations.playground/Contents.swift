@@ -100,16 +100,16 @@ class MyViewController : UIViewController {
     }
 
     @objc func animateWink() {
-        let originaHeight = rightEye.frame.size.height
-        let originlYPos = rightEye.center.y
+        let originalHeight = rightEye.frame.size.height
+        let originalYPos = rightEye.center.y
 
         // Animate with with completion callback
         UIView.animate(withDuration: 0.3, animations: {
             self.rightEye.frame.size.height = 0
             self.rightEye.center.y = 400
         }) { (true) in
-            self.rightEye.frame.size.height = originaHeight
-            self.rightEye.center.y = originlYPos
+            self.rightEye.frame.size.height = originalHeight
+            self.rightEye.center.y = originalYPos
         }
     }
 
@@ -117,7 +117,12 @@ class MyViewController : UIViewController {
         let originaHeight = toungh.frame.size.height
 
         // Animate with sprint effect
-        UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 5, options: .curveEaseOut, animations: {
+        UIView.animate(withDuration: 1,
+                       delay: 0,
+                       usingSpringWithDamping: 0.2,
+                       initialSpringVelocity: 5,
+                       options: .curveEaseOut,
+                       animations: {
             self.toungh.frame.size.height = 55
         }) { _ in
             self.toungh.frame.size.height = originaHeight
